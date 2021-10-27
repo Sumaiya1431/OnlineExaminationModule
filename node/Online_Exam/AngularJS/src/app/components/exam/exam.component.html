@@ -1,0 +1,166 @@
+ <!-- Mine form-->
+ <div class="col-md-8 my-5" style="padding-left: 120px" >
+  <form #examForm="ngForm" (ngSubmit)="onSubmit(examForm)">
+      <div class="form-group">
+        <label>Name of Exam Conducting Officer</label>
+        <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="examService.selectedExam.name" required>
+      </div>
+      <div class="form-group">
+        <label>Designation of Conducting Officer</label>
+        <input type="text" class="form-control" name="designation" #name="ngModel" [(ngModel)]="examService.selectedExam.designation" placeholder="Password" >
+      </div>
+      <div class="form-group">
+        <label>Date of Exam</label>
+        <input type="date" class="form-control" name="date" #name="ngModel" [(ngModel)]="examService.selectedExam.date" placeholder="Password" >
+      </div>
+      <div class="form-group">
+        <label>Time of Exam</label>
+        <input type="text" class="form-control" name="time" #name="ngModel" [(ngModel)]="examService.selectedExam.time" placeholder="Password" >
+      </div>
+      <div class="form-group">
+        <label>Duration of Exam</label>
+        <input type="number" class="form-control" name="duration" #name="ngModel" [(ngModel)]="examService.selectedExam.duration" placeholder="Password" >
+      </div><br>
+      <div class="form-group">
+        <label>Number of Questions</label>
+        <input type="number" class="form-control" name="no_of_ques" #name="ngModel" [(ngModel)]="examService.selectedExam.no_of_ques" placeholder="Password" >
+      </div><br>
+      <div><input id="photo" type="file" required></div>
+      
+      
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <!-- Mine form end-->
+
+
+
+<!-- <div class="row">
+  <div class="col s12">
+    <div class="card ">
+      <div class="card-content white-text">
+        <div class="row">
+            <div class="col s5">
+                <form #examForm="ngForm" (ngSubmit)="onSubmit(examForm)">
+                    <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="examService.selectedExam._id">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" name="name" #name="ngModel" [(ngModel)]="examService.selectedExam.name" placeholder="Enter full name" required>
+                            <label>Name :
+                              <label class="red-text">*</label>
+                              </label>
+
+                        </div>
+                      </div>
+                      <div class="row">
+                          <div class="input-field col s12">
+                              <input type="text" name="designation" #name="ngModel" [(ngModel)]="examService.selectedExam.designation" placeholder="Enter full name" required>
+                              <label>Designation :
+                                <label class="red-text">*</label>
+                                </label>
+  
+                          </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="text" name="post" #name="ngModel" [(ngModel)]="examService.selectedExam.post" placeholder="Enter full name" required>
+                                <label>post :
+                                  <label class="red-text">*</label>
+                                  </label>
+    
+                            </div>
+                          </div>
+                          <div class="row">
+                              <div class="input-field col s12">
+                                  <input type="number" name="duration" #name="ngModel" [(ngModel)]="examService.selectedExam.duration" placeholder="Enter full name" required>
+                                  <label>duration :
+                                    <label class="red-text">*</label>
+                                    </label>
+      
+                              </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="datetime-local" name="date-time" #name="ngModel" [(ngModel)]="examService.selectedExam.date-time" placeholder="Enter full name" required>
+                                    <label>date-time :
+                                      <label class="red-text">*</label>
+                                      </label>
+        
+                                </div>
+                              </div>
+                              <div class="row">
+                                  <div class="input-field col s12">
+                                      <input type="number" name="no_of_cand" #name="ngModel" [(ngModel)]="examService.selectedExam.no_of_cand" placeholder="Enter full name" required>
+                                      <label>no_of_cand :
+                                        <label class="red-text">*</label>
+                                        </label>
+          
+                                  </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input type="number" name="no_of_ques" #name="ngModel" [(ngModel)]="examService.selectedExam.no_of_cand" placeholder="Enter full name" required>
+                                        <label>no_of_cand :
+                                          <label class="red-text">*</label>
+                                          </label>
+            
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="input-field col s12">
+                                          <input type="number" name="no_of_vac" #name="ngModel" [(ngModel)]="examService.selectedExam.no_of_vac" placeholder="Enter full name" required>
+                                          <label>no_of_vac :
+                                            <label class="red-text">*</label>
+                                            </label>
+              
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input type="text" name="dept_id" #name="ngModel" [(ngModel)]="examService.selectedExam.dept_id" placeholder="Enter full name" required>
+                                            <label>dept_id :
+                                              <label class="red-text">*</label>
+                                              </label>
+                
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                          <div class="input-field col s12">
+                                              <input type="text" name="password" #name="ngModel" [(ngModel)]="examService.selectedExam.password" placeholder="Enter full name" required>
+                                              <label>password :
+                                                <label class="red-text">*</label>
+                                                </label>
+                  
+                                          </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                              <button class="btn btn-custom right" type="button" (click)="resetForm(examForm)">Reset</button>
+                                              <button class="btn btn-custom right" type="submit" [disabled]="!examForm.valid">Submit</button>
+                                            </div>
+                                          </div>
+                </form>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

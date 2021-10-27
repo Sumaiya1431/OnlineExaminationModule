@@ -1,0 +1,118 @@
+//require express library
+var express = require('express');
+var fs = require('fs')
+var path = require('path')
+var router = express.Router();
+var multer = require('multer');
+var mongoXlsx = require('mongo-xlsx');
+var DIR = './uploads/';
+//var upload = multer({dest: DIR}).single('photo');
+/* GET home page. */
+
+//mine
+var csv = require('fast-csv');
+var mongoose = require('mongoose');
+var Author = require('../author');
+var bucket = 'myBucket';
+//mine ended
+
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './uploads/')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname)
+  }
+})
+
+var upload = multer({ storage: storage }).single('photo');
+
+router.post('/', function (req, res, next) {
+	 var path = '';
+	 upload(req, res, function (err) {
+	    if (err) {
+	      console.log(err);
+	    }  
+			path = req.file.path;
+			console.log("file :" + req.file);
+
+    //mine 
+		console.log("path" + req.file.path + "name" + req.file.filename);
+		uploadFile(req.file.path);
+ 
+    // var authors = [];
+         
+    // csv
+    //  .fromString(authorFile.data.toString(), {
+    //      headers: true,
+    //      ignoreEmpty: true
+    //  })
+    //  .on("data", function(data){
+    //      data['_id'] = new mongoose.Types.ObjectId();
+          
+    //      authors.push(data);
+    //  })
+    //  .on("end", function(){
+    //      Author.create(authors, function(err, documents) {
+    //         if (err) throw err;
+    //      });
+          
+    //      res.send(authors.length + ' authors have been successfully uploaded.');
+		//  });
+		 //mine end
+
+	    return res.send("Upload Completed for "+path); 
+  });	 
+})
+
+
+// function uploadFile(source, target){
+
+// 	fs.readFile(source, function (err, data) {
+
+// 			if (!err)
+// 		 {
+// 			var authors = [];
+// 			csv.fromString(data.toString(), {
+//          headers: true,
+//          ignoreEmpty: true
+//      })
+//      .on("data", function(data){
+//          data['_id'] = new mongoose.Types.ObjectId();
+          
+// 				 authors.push(data);
+// 				 console.log(authors);
+//      })
+//      .on("end", function(){
+
+//          Author.create(authors, function(err, documents) {
+//             if (err) throw err;
+//          });
+// 				 console.log(' authors have been successfully uploaded.')
+// 		 });
+// 									//fs.unlink(source); // optionally delete the file
+// 			}
+// 			else{
+// 				console.log(err);
+// 			}
+// 	});
+// }
+
+function uploadFile(source){
+	mongoXlsx.xlsx2MongoData(source,null, function(err, mongoData) {
+		console.log('Mongo data:', mongoData); 
+		Author.create(mongoData,(err)=>
+    {
+        if(!err)
+						console.log('Saved Mongo data:', mongoData); 
+        else
+        		console.log(err);
+    });
+	});
+}
+
+module.exports = router;
