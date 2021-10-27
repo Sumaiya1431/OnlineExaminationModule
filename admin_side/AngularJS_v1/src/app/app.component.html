@@ -1,0 +1,152 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <button class="navbar-toggler sideMenuToggler" type="button">
+        <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">DropDown</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+ </div>
+</nav>
+
+<div class="wrapper d-flex">
+  <div class="sideMenu bg-mattBlackLight">
+    <div class="sidebar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <!-- <a href="#" class="nav-link px-2"> -->
+            <a class="nav-link px-2" [routerLink]="['/login']">
+            <i class="material-icons icon">dashboard</i>
+            <span class="text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-2" [routerLink]="['/exam']">
+            <i class="material-icons icon">person</i>
+            <span class="text">Create New Test</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-2" [routerLink]="['/qb_dept']">
+            <i class="material-icons icon">insert_chart</i>
+            <span class="text">Add Question Bank</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-2" [routerLink]="['/Previous']">
+            <i class="material-icons icon">settings</i>
+            <span class="text">Previous Tests</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-2 sideMenuToggler">
+            <i class="material-icons icon expandView ">view_list</i>
+            <span class="text">Collapse Side Bar</span>
+          </a>
+        </li>    
+      </ul>
+    </div>
+  </div>
+  <div class="content">
+    
+      <main>
+        <div class="container-fluid ">
+         <!--<app-exam></app-exam>-->
+         <router-outlet></router-outlet>
+          <!--<div class="alert alert-success my-5">
+           <strong class="d-flex justify-content-center text-center"> A like is always appreciated</strong>
+          </div>
+          <div class="alert alert-info my-3">
+        jquery slimscroll is not implemented in the <strong>Demo</strong>.
+        Updated Code is provided on the <strong>Blog</strong>
+      </div>
+        <div class="alert alert-warning my-3">
+        Please Do watch my previous video on how to add the <strong>overlay </strong> for the mobile menu.
+      </div>
+          <div class="row">
+            <div class="col-md-4 my-3">
+              <div class="bg-mattBlackLight px-3 py-3">
+                <h4 class="mb-2">New Clients</h4>
+                <div class="progress" style="height: 16px;">
+                  <div
+                    class="progress-bar bg-warning text-mattBlackDark"
+                    role="progressbar"
+                    style="width: 25%;"
+                    aria-valuenow="25"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  >
+                    25
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 my-3">
+              <div class="bg-mattBlackLight px-3 py-3">
+                <h4 class="mb-2">New Projects</h4>
+                <div class="progress" style="height: 16px;">
+                  <div
+                    class="progress-bar bg-info text-mattBlackDark"
+                    role="progressbar"
+                    style="width: 50%;"
+                    aria-valuenow="25"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  >
+                    50
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 my-3">
+              <div class="bg-mattBlackLight p-3">
+                <h4 class="mb-2">Completed</h4>
+                <div class="progress" style="height: 16px;">
+                  <div
+                    class="progress-bar bg-success"
+                    role="progressbar"
+                    style="width: 80%;"
+                    aria-valuenow="25"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  >
+                    80
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="bg-mattBlackLight my-2 p-3">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Ratione libero totam rerum eos nam ab perspiciatis voluptatum
+                in. Quidem natus autem quae. Velit accusamus sit, perspiciatis
+                sunt earum tempora veniam.
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="bg-mattBlackLight my-2 p-3">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Ratione libero totam rerum eos nam ab perspiciatis voluptatum
+                in. Quidem natus autem quae. Velit accusamus sit, perspiciatis
+                sunt earum tempora veniam.
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </main>
+    </div>
+  </div>

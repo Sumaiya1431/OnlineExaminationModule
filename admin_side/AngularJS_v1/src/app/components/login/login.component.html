@@ -1,0 +1,34 @@
+<div class="wrapper">
+  <div id="formContent">
+   <!-- <h2 class="underlineHover"  routerLink="/login"  routerLinkActive="active"> Sign In </h2>
+    <h2 class="underlineHover"  routerLink="/signup"  routerLinkActive="active">Sign Up </h2>
+    <router-outlet></router-outlet> -->
+    <div>
+      <img src="assets/images/single_user.png" id="icon" alt="User Icon" />
+    </div>
+    <form #logInForm="ngForm" (ngSubmit)="logInForm.valid && onSubmit(logInForm)">
+        <!-- "invalid-textbox" is applied only when the condition is true and shows red line below -->
+        <input type="text" name="emp_no" #email="ngModel" [(ngModel)]="model.emp_no" placeholder="Employee Number" required> <!-- [pattern]="emailRegex" -->
+              <!-- [ngClass]="{'invalid-textbox' :logInForm.submitted && !email.valid }"> 
+        <div *ngIf="signInForm.submitted && email.errors?.pattern">
+          <label class="validation-message">Invalid email address.</label>
+        </div> -->
+
+        <input type="password" name="password" #password="ngModel" [(ngModel)]="model.password" placeholder="Password" required minlength="4"
+          [ngClass]="{'invalid-textbox' :logInForm.submitted && !password.valid }">
+        <div *ngIf="logInForm.submitted && password.errors?.minlength">
+          <label class="validation-message">Minimum 4 characters.</label>
+        </div>
+
+        <input type="submit" value="Sign In">
+    </form>
+
+    <!-- Error message -->
+    <div class="alert" *ngIf="successful">
+        {{successful}}
+      </div>
+  <div class="alert" *ngIf="serverErrorMessages">
+      {{serverErrorMessages}}
+    </div>
+  </div>
+</div>

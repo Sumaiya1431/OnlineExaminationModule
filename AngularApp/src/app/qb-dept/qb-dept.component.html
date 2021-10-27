@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col s12">
+    <div class="card ">
+      <div class="card-content white-text">
+        <div class="row">
+            <div class="col s5">
+               <form #qbdeptForm="ngForm" (ngSubmit)="onSubmit(qbdeptForm)">
+                    <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="qbDeptService.selectedQbDept._id">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" name="dept" #name="ngModel" [(ngModel)]="qbDeptService.selectedQbDept.dept" placeholder="Enter department" required >
+                            <label>Department :
+                              <label class="red-text">*</label>
+                              </label>
+                        </div>
+                      </div>
+                      <div class="row">
+                          <div class="input-field col s12">
+                              <input type="text" name="category" #name="ngModel" [(ngModel)]="qbDeptService.selectedQbDept.category" placeholder="Enter category" required>
+                              <label>Category :
+                                <label class="red-text">*</label>
+                                </label>
+  
+                          </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="number" name="level" #name="ngModel" [(ngModel)]="qbDeptService.selectedQbDept.level" placeholder="Enter level" required>
+                                <label>Level :
+                                  <label class="red-text">*</label>
+                                  </label>
+    
+                            </div>
+                          </div>
+                          <div class="row">
+                              <div class="input-field col s12">
+                                  <input type="text" name="exam_type" #name="ngModel" [(ngModel)]="qbDeptService.selectedQbDept.exam_type" placeholder="Enter examtype" required>
+                                  <label>Exam Type :
+                                    <label class="red-text">*</label>
+                                    </label>
+      
+                              </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    Question Bank :
+                                    <input id="photo" type="file" required>
+                            </div>
+                              </div>
+                            
+                            <div class="row">
+                                <div class="input-field col s12">
+
+                                  <button class="btn btn-custom right" type="button" (click)="resetForm(qbdeptForm)">Reset</button>
+                                  <button class="btn btn-custom right" type="submit" [disabled]="!qbdeptForm.valid">Submit</button>
+                                </div>
+                              </div>
+
+                              
+                            <!-- button to trigger the file upload when submitted -->
+                            
+                </form>
+              
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

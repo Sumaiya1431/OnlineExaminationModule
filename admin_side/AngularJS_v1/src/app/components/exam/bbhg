@@ -1,0 +1,60 @@
+ <!-- Mine form-->
+ <div class="col-md-8 my-5" style="padding-left: 120px" >
+  <form #examForm="ngForm" (ngSubmit)="onSubmit(examForm)">
+      <div class="form-group">
+        <label>Name of Exam Conducting Officer</label>
+        <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="examService.selectedExam.name" required>
+      </div>
+      <div class="form-group">
+        <label>Designation of Conducting Officer</label>
+        <input type="text" class="form-control" name="designation" #name="ngModel" [(ngModel)]="examService.selectedExam.designation" placeholder="Password" >
+      </div>
+      <div class="form-group">
+        <label>Department </label>
+        <input type="text" class="form-control" name="dept" #name="ngModel" [(ngModel)]="examService.selectedExam.dept" placeholder="Password" >
+      </div>
+      <div class="form-group">
+        <label>Category</label>
+        <input type="text" class="form-control" name="category" #name="ngModel" [(ngModel)]="examService.selectedExam.category" placeholder="Password" >
+      </div>
+      <div class="form-group">
+        <label>Level</label>
+        <input type="number" class="form-control" name="level" #name="ngModel" [(ngModel)]="examService.selectedExam.level" placeholder="Password" >
+      </div>
+      <div class="form-group">
+        <label>Exam Type</label>
+        <input type="text" class="form-control" name="exam_type" #name="ngModel" [(ngModel)]="examService.selectedExam.exam_type" placeholder="Password" >
+      </div>
+      <div class="form-group">
+        <label>Date of Exam</label>
+        <input type="date" class="form-control" name="date" #name="ngModel" [(ngModel)]="examService.selectedExam.date" placeholder="Password" >
+      </div>
+      <div class="form-group">
+        <label>Time of Exam</label>
+        <input type="text" class="form-control" name="time" #name="ngModel" [(ngModel)]="examService.selectedExam.time" placeholder="Password" >
+      </div>
+      <div class="form-group">
+        <label>Duration of Exam</label>
+        <input type="number" class="form-control" name="duration" #name="ngModel" [(ngModel)]="examService.selectedExam.duration" placeholder="Password" >
+      </div><br>
+      <div class="form-group">
+        <label>Number of Questions </label>
+        <input type="number" class="form-control" name="no_of_ques" #name="ngModel" [(ngModel)]="examService.selectedExam.no_of_ques" placeholder="Password" >
+      </div><br>
+      <div class="form-group">
+        <label>Number of Vacancies</label>
+        <input type="number" class="form-control" name="no_of_vac" #name="ngModel" [(ngModel)]="examService.selectedExam.no_of_vac" placeholder="Password" >
+      </div><br>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="text" class="form-control" name="password" #name="ngModel" [(ngModel)]="examService.selectedExam.password" placeholder="Password" >
+      </div><br>
+      <div class="form-group">
+        <label>Centre</label>
+        <input type="text" class="form-control" name="centre" #name="ngModel" [(ngModel)]="examService.selectedExam.centre" placeholder="Password" >
+      </div><br>
+      <div> Question Bank :
+        <input id="photo" type="file" required></div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>

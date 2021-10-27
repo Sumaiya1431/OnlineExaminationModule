@@ -1,0 +1,32 @@
+ <!-- Mine form-->
+ <div class="col-md-8 my-5" style="padding-left: 120px" >
+  <form #qbdeptForm="ngForm" (ngSubmit)="onSubmit(qbdeptForm)">
+      <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="qbDeptService.selectedQbDept._id">
+      <div class="form-group">
+        <label>Department</label>
+        <input type="text" class="form-control" name="dept" #name="ngModel" [(ngModel)]="qbDeptService.selectedQbDept.dept" required>
+      </div>
+      <div class="form-group">
+        <label>Category</label>
+        <input type="text" class="form-control" name="category" #name="ngModel" [(ngModel)]="qbDeptService.selectedQbDept.category" placeholder="Password" >
+      </div>
+      <div class="form-group">
+        <label>Level</label>
+        <input type="number" class="form-control" name="level" #name="ngModel" [(ngModel)]="qbDeptService.selectedQbDept.level" placeholder="Password" >
+      </div>
+      <div class="form-group">
+        <label>Exam Type</label>
+        <input type="text" class="form-control" name="exam_type" #name="ngModel" [(ngModel)]="qbDeptService.selectedQbDept.exam_type" placeholder="Password" >
+      </div>
+      
+      <div class="form-group">
+        <label>Question Bank</label>
+        <input id="photo" type="file" required>
+      </div><br>
+      
+      
+      
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+ 
